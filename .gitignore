@@ -1,0 +1,4 @@
+pic2map/Cargo.lock
+pic2map/target
+pic2map/target/*
+*.glade~

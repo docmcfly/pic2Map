@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.90.4 -->
+<interface>
+  <!-- interface-name pic2map.ui -->
+  <requires lib="gtk" version="4.6"/>
+
+  <object class="GtkBox" id="content">
+    <child>
+      <object class="GtkLabel" id="label">
+        <property name="css-classes">label</property>
+      </object>
+    </child>
+  </object>
+
+  <object class="AdwClamp" id="adwClamp">
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">1</property>
+        <child>
+          <object class="GtkBox" id="controls">
+            <property name="spacing">6</property>
+            <property name="halign">3</property>
+            <child>
+              <object class="GtkBox">
+                <child>
+                  <object class="GtkBox">
+                    <child>
+                      <object class="GtkEntry" id="entry_latitude">
+                        <property name="input-purpose">2</property>
+                        <property name="placeholder-text" translatable="true">Latitude</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="entry_longitude">
+                        <property name="input-purpose">2</property>
+                        <property name="placeholder-text" translatable="true">Longitude</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_go">
+                        <property name="label" translatable="true">Go</property>
+                      </object>
+                    </child>
+                    <style>
+                      <class name="linked"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkSeparator"></object>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <child>
+                  <object class="GtkToggleButton" id="button_move">
+                    <property name="active">true</property>
+                    <property name="icon-name">move-tool-symbolic</property>
+                    <property name="tooltip-text" translatable="true">Move Map</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkToggleButton" id="button_marker">
+                    <property name="group">button_move</property>
+                    <property name="icon-name">map-marker-symbolic</property>
+                    <property name="tooltip-text" translatable="true">Place Marker</property>
+                  </object>
+                </child>
+                <style>
+                  <class name="linked"/>
+                </style>
+              </object>
+            </child>
+            <style>
+              <class name="toolbar"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="ShumateSimpleMap" id="map_widget">
+            <property name="height-request">360</property>
+            <property name="show-zoom-buttons">true</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLinkButton">
+            <property name="label" translatable="true">API Reference</property>
+            <property name="uri">https://gnome.pages.gitlab.gnome.org/libshumate/index.html</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
